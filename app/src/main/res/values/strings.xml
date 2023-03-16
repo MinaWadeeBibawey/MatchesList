@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Assessment Application</string>
+
+    <string name="wish_list">Show Wishlist</string>
+    <string name="saved_matches">Show All</string>
+    <string name="match_status">Match Status: %s</string>
+    <string name="teams_name">Teams: %s</string>
+    <string name="match_score">Score: %s</string>
+    <string name="today_and_tomorrow_matches">Today And Tomorrow\'s Matches</string>
+    <string name="from">From</string>
+    <string name="filter">Filter</string>
+    <string name="to">To</string>
+    <string name="status">Status</string>
+    <string name="clear_date_filter">Clear Filter Date</string>
+    <string name="clear_status_filter">Clear Status Filter</string>
+    <string name="confirm_button">Confirm Status</string>
+    <string name="scheduled">SCHEDULED</string>
+    <string name="live">LIVE</string>
+    <string name="in_play">IN_PLAY</string>
+    <string name="paused">PAUSED</string>
+    <string name="finished">FINISHED</string>
+    <string name="postponed">POSTPONED</string>
+    <string name="suspended">SUSPENDED</string>
+    <string name="cancelled">CANCELLED</string>
+</resources>

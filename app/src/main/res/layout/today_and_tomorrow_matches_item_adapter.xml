@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.innovitics.android.architecture.assessmentapplication.utils.UtilsKt"/>
+
+        <variable
+            name="matchesModel"
+            type="com.innovitics.android.architecture.assessmentapplication.database.MatchesEntity" />
+
+        <variable
+            name="handler"
+            type="com.innovitics.android.architecture.assessmentapplication.adapters.MatchesOfTheDayViewHolder" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/matches_of_the_day_header_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/today_and_tomorrow_matches"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/header_bg"
+        android:textColor="@color/white"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:gravity="start|center_vertical"
+        style="@style/text_title_style" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/today_and_tomorrow_matches_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/matches_of_the_day_header_title"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

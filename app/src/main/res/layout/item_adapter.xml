@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.innovitics.android.architecture.assessmentapplication.utils.UtilsKt"/>
+
+        <variable
+            name="matchesModel"
+            type="com.innovitics.android.architecture.assessmentapplication.database.MatchesEntity" />
+
+        <variable
+            name="handler"
+            type="com.innovitics.android.architecture.assessmentapplication.adapters.MatchesListViewHolder" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/AddToWishList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.click(matchesModel)}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            app:wishlist="@{matchesModel.addedToWishlist}"
+            style="@style/text_style"/>
+
+
+        <TextView
+            android:id="@+id/home_team_name_text"
+            style="@style/text_style"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AddToWishList"
+            app:teamsName="@{matchesModel.home_name}"
+            tools:text="Bournemouth" />
+
+        <TextView
+            android:id="@+id/away_team_name_text"
+            style="@style/text_style"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AddToWishList"
+            app:teamsName="@{matchesModel.away_name}"
+            tools:text="Liverpool" />
+
+        <TextView
+            android:id="@+id/match_score_text"
+            style="@style/text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            app:score="@{matchesModel.score}"
+            app:layout_constraintStart_toEndOf="@+id/home_team_name_text"
+            app:layout_constraintEnd_toStartOf="@+id/away_team_name_text"
+            app:layout_constraintTop_toBottomOf="@+id/AddToWishList"
+            tools:text="2-0" />
+
+        <TextView
+            android:id="@+id/match_status_text"
+            style="@style/text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_team_name_text"
+            app:matchStatus="@{matchesModel.status}"
+            tools:text="FINISHED" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

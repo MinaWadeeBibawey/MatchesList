@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.innovitics.android.architecture.assessmentapplication.utils.UtilsKt" />
+
+        <variable
+            name="date"
+            type="String" />
+    </data>
+
+    <TextView
+        style="@style/text_title_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@{date}"
+        android:background="@color/header_bg" />
+
+</layout>

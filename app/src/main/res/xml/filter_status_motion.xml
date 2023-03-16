@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="500">
+
+        <!-- MotionLayout will handle clicks on @id/change_unit to "toggle" the animation between the start and end -->
+        <OnClick app:targetId="@id/status_date_filter_tv" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/confirm_filter_status_button_popup"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="111dp"
+            android:layout_marginEnd="110dp"
+            android:alpha="0.0"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@+id/filter_status_popup_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="56dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <Constraint
+            android:id="@+id/background_filter_status_popup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.0"
+            android:visibility="invisible"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/filter_header"
+            style="@style/text_title_style"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/header_bg"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/filter"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/from_date_filter_tv"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="1dp"
+            android:gravity="center"
+            android:text="@string/from"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/to_date_filter_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_header"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/to_date_filter_tv"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="1dp"
+            android:gravity="center"
+            android:text="@string/to"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/status_date_filter_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/from_date_filter_tv"
+            app:layout_constraintTop_toBottomOf="@+id/filter_header"
+            app:visibilityMode="ignore"/>
+
+
+        <Constraint
+            android:id="@+id/status_date_filter_tv"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="@string/status"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/to_date_filter_tv"
+            app:layout_constraintTop_toBottomOf="@+id/filter_header"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/clear_date_filter_button"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/clear_date_filter"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/clear_filter_status_button"
+            app:layout_constraintEnd_toStartOf="@+id/clear_filter_status_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/to_date_filter_tv"
+            app:visibilityMode="ignore"
+            app:layout_editor_absoluteX="15dp" />
+
+        <Constraint
+            android:id="@+id/clear_filter_status_button"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/clear_status_filter"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/clear_date_filter_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/clear_date_filter_button"
+            app:layout_constraintTop_toBottomOf="@+id/from_date_filter_tv"
+            app:visibilityMode="ignore"
+            app:layout_editor_absoluteX="221dp" />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/filter_status_popup_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="56dp"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/confirm_filter_status_button_popup"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="110dp"
+            android:alpha="1.0"
+            android:visibility="visible"
+            android:translationZ="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_status_popup_container" />
+
+        <Constraint
+            android:id="@+id/background_filter_status_popup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.7"
+            android:visibility="visible"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/filter_header"
+            style="@style/text_title_style"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/header_bg"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/filter"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/from_date_filter_tv"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="1dp"
+            android:gravity="center"
+            android:text="@string/from"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/to_date_filter_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter_header"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/to_date_filter_tv"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="1dp"
+            android:gravity="center"
+            android:text="@string/to"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/status_date_filter_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/from_date_filter_tv"
+            app:layout_constraintTop_toBottomOf="@+id/filter_header"
+            app:visibilityMode="ignore"/>
+
+
+        <Constraint
+            android:id="@+id/status_date_filter_tv"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="@string/status"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/to_date_filter_tv"
+            app:layout_constraintTop_toBottomOf="@+id/filter_header"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/clear_date_filter_button"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/clear_date_filter"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/clear_filter_status_button"
+            app:layout_constraintEnd_toStartOf="@+id/clear_filter_status_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/to_date_filter_tv"
+            app:visibilityMode="ignore"
+            app:overlay="false"
+            app:layout_editor_absoluteX="15dp" />
+
+        <Constraint
+            android:id="@+id/clear_filter_status_button"
+            style="@style/text_style"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/clear_status_filter"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/clear_date_filter_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/clear_date_filter_button"
+            app:layout_constraintTop_toBottomOf="@+id/from_date_filter_tv"
+            app:visibilityMode="ignore"
+            app:layout_editor_absoluteX="221dp" />
+
+
+    </ConstraintSet>
+
+</MotionScene>
